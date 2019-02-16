@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class BloodBankListResponse {
+public class BloodBankListResponse extends GenericResponse {
 
-    @SerializedName("bloodBankList")
+    @SerializedName("data")
     private List<HospitalBloodBankData> bloodBankDataList;
 
     public List<HospitalBloodBankData> getBloodBankDataList() {

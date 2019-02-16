@@ -42,7 +42,7 @@ public class HospitalBloodBankAdapter extends RecyclerView.Adapter<HospitalBlood
         final HospitalBloodBankData data = hospitalBloodBankDataList.get(i);
         holder.name.setText(data.getName());
         holder.grp.setText(data.getBlood_grp());
-        holder.units.setText(data.getUnits_of_blood());
+        holder.units.setText(String.valueOf(data.getUnits_of_blood()));
         holder.city.setText(data.getCity());
         holder.state.setText(data.getState());
         holder.address.setText(data.getAddress());

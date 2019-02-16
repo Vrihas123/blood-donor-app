@@ -38,6 +38,7 @@
             android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps">
 
+
         </activity>
         <activity android:name=".activity.HomeActivity">
             <intent-filter>

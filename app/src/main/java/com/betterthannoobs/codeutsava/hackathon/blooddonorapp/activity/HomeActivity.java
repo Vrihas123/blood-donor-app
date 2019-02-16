@@ -7,28 +7,34 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.MyApplication;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.R;
+import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.fragment.DonorFragment;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.fragment.HospitalBloodBankFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
 
-    private Button btRegisteredBloodBanks;
+    private Button btRegisteredBloodBanks, btDonorList;
     private HospitalBloodBankFragment hospitalBloodBankFragment;
-
+    private DonorFragment donorFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MyApplication.getInstance().getComponent().inject(this);
         setContentView(R.layout.activity_home);
         btRegisteredBloodBanks = findViewById(R.id.hospital_blood_bank_fragment);
-
+        btDonorList = findViewById(R.id.donor_list_bt);
         btRegisteredBloodBanks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 hospitalBloodBankFragment = HospitalBloodBankFragment.newInstance();
                 createFragment(hospitalBloodBankFragment, "BloodBankFragment", true);
+            }
+        });
+        btDonorList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                donorFragment = DonorFragment.newInstance();
+                createFragment(donorFragment, "DonorFragment", true);
             }
         });
     }

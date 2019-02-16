@@ -5,31 +5,34 @@
     android:orientation="vertical"
     tools:context="com.betterthannoobs.codeutsava.hackathon.blooddonorapp.fragment.HospitalBloodBankFragment">
 
+
     <android.support.v7.widget.Toolbar
-        android:id="@+id/blood_bank_toolbar"
+        android:id="@+id/donor_toolbar"
         style="@style/HeaderBar"
         android:layout_width="match_parent"
         android:layout_height="56dp">
 
     </android.support.v7.widget.Toolbar>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient_red">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_red">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view_blood_banks"
+        android:id="@+id/recycler_view_donor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp">
+
 
     </android.support.v7.widget.RecyclerView>
 
     <ProgressBar
-        android:id="@+id/progress_bar_blood_banks"
+        android:id="@+id/progress_bar_donor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
 
-</RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>
