@@ -2,6 +2,7 @@ package com.betterthannoobs.codeutsava.hackathon.blooddonorapp.retrofit;
 
 
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.OkHttpClientProvider;
+import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.data.BloodBankListResponse;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.model.LoginData;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.utils.constants.HttpRequestConstants;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.utils.retrofit.BaseResponse;
@@ -11,6 +12,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiService {
@@ -18,6 +20,9 @@ public interface ApiService {
 
     @POST(HttpRequestConstants.REQUEST_LOGIN)
     Observable<BaseResponse> getLoginResultsUsingObservable(@Body LoginData loginData);
+
+    @GET(HttpRequestConstants.REQUEST_BLOOD_BANKS)
+    Observable<BaseResponse<BloodBankListResponse>> getBloodBankListUsingObservable();
 
     class Creator {
 

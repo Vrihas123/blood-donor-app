@@ -1,6 +1,7 @@
 package com.betterthannoobs.codeutsava.hackathon.blooddonorapp.retrofit;
 
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.MyApplication;
+import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.data.BloodBankListResponse;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.model.LoginData;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.retrofit.internal.ApiHelper;
 import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.utils.retrofit.BaseResponse;
@@ -8,7 +9,9 @@ import com.betterthannoobs.codeutsava.hackathon.blooddonorapp.utils.retrofit.Bas
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -35,6 +38,10 @@ public class CallHandler {
 
     public Observable<BaseResponse> getLoginResultsUsingObservable(LoginData loginData) {
         return apiService.getLoginResultsUsingObservable(loginData).retry(3).subscribeOn(AndroidSchedulers.mainThread());
+    }
+
+    public Observable<BaseResponse<BloodBankListResponse>> getBloodBankResultUsingObservable() {
+        return apiService.getBloodBankListUsingObservable().retry(3).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread());
     }
 
 }
