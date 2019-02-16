@@ -66,7 +66,7 @@ public class DonorFragment extends DialogFragment {
         donorAdapter = new DonorAdapter(getContext());
         recyclerViewDonor.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerViewDonor.setAdapter(donorAdapter);
-
+        APICall();
         return view;
     }
 

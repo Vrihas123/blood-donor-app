@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DonorListResponse extends GenericResponse{
 
-    @SerializedName("donor_list")
+    @SerializedName("data")
     private List<DonorData> donorDataList;
 
     public List<DonorData> getDonorDataList() {

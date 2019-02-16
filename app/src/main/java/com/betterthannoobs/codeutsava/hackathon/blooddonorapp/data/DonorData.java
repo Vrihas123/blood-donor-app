@@ -3,6 +3,10 @@ package com.betterthannoobs.codeutsava.hackathon.blooddonorapp.data;
 import com.google.gson.annotations.SerializedName;
 
 public class DonorData {
+
+    @SerializedName("donor_id")
+    private int donor_id;
+
     @SerializedName("full_name")
     private String full_name;
 
@@ -26,6 +30,14 @@ public class DonorData {
 
     @SerializedName("weight")
     private int weight;
+
+    public int getDonor_id() {
+        return donor_id;
+    }
+
+    public void setDonor_id(int donor_id) {
+        this.donor_id = donor_id;
+    }
 
     public String getFull_name() {
         return full_name;
