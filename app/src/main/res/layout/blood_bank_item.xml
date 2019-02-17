@@ -24,7 +24,8 @@
                 android:layout_height="wrap_content"
                 android:text="Blood bank name"
                 android:textSize="20dp"
-                android:textStyle="italic"
+                android:textAlignment="center"
+                android:textStyle="bold"
                 android:textColor="@color/black"/>
 
 
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood bank city"
                 android:textSize="20dp"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -59,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood bank state"
                 android:textSize="20dp"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -67,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood bank address"
                 android:textSize="20dp"
+                android:textAlignment="viewEnd"
                 android:textColor="@color/black"/>
 
             <TextView
@@ -75,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood bank contact"
                 android:textSize="20dp"
+                android:textAlignment="center"
                 android:textColor="@color/black"/>
 
         </LinearLayout>

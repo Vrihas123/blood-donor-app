@@ -49,7 +49,7 @@ public class AppClient {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request().newBuilder()
-                        .addHeader("authId", prefUtils.getAccessToken()).build();
+                        .addHeader("HTTP_AUTHORIZATION", prefUtils.getAccessToken()).build();
 
                 Log.e("Header====",   prefUtils.getAccessToken()  );
                 return chain.proceed(request);

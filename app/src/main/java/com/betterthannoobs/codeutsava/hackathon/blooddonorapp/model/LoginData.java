@@ -5,16 +5,24 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginData {
 
-    @SerializedName("mobile")
+    @SerializedName("username")
     @Expose
-    private String mobile;
+    private String username;
 
     @SerializedName("password")
     @Expose
     private String password;
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {

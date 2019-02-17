@@ -1,8 +1,10 @@
 package com.betterthannoobs.codeutsava.hackathon.blooddonorapp.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -11,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -32,9 +36,10 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
     private GoogleMap mMap;
     private GoogleApiClient client;
@@ -45,13 +50,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Marker currentLocationMarker;
     private Button btNearbyBB;
     public static final int REQUEST_LOCATION_CODE = 99;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+        toolbar = findViewById(R.id.maps_toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         btNearbyBB = findViewById(R.id.nearby_bb_bt);
+        toolbar.setTitle("Nearby Hospitals and Blood Banks");
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         btNearbyBB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,7 +102,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         dataTransfer[1] = url;
 
         getNearbyPlacesData.execute(dataTransfer);
-        Toast.makeText(MapsActivity.this, "Showing Nearby Blood Banks", Toast.LENGTH_SHORT).show();
+//        String location = "hospital";
+//        List<Address> addressList;
+
+
+//        if(!location.equals(""))
+//        {
+//            Geocoder geocoder = new Geocoder(this);
+//
+//            try {
+//                addressList = geocoder.getFromLocationName(location, 15);
+//
+//                if(addressList != null)
+//                {
+//                    for(int i = 0;i<addressList.size();i++)
+//                    {
+//                        LatLng latLng = new LatLng(addressList.get(i).getLatitude() , addressList.get(i).getLongitude());
+//                        MarkerOptions markerOptions = new MarkerOptions();
+//                        markerOptions.position(latLng);
+//                        markerOptions.title(location);
+//                        mMap.addMarker(markerOptions);
+//                        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+//                        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+//                    }
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+        Toast.makeText(MapsActivity.this, "Showing Nearby Hospitals and Blood Banks", Toast.LENGTH_SHORT).show();
     }
 
 

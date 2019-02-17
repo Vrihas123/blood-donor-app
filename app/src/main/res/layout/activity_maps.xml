@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/faculty_activity_toolbar"
+        android:id="@+id/maps_toolbar"
         style="@style/HeaderBar"
         android:layout_width="match_parent"
         android:layout_height="56dp">
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_margin="2dp"
         android:layout_height="40dp"
-        android:text="Get Nearby Blood Banks"
+        android:text="Get Nearby Hospitals and Blood Banks"
         android:textAllCaps="false"
         android:textAlignment="center"/>
 

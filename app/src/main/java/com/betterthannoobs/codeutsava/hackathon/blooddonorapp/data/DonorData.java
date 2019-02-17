@@ -31,6 +31,72 @@ public class DonorData {
     @SerializedName("weight")
     private int weight;
 
+    @SerializedName("first_name")
+    private String first_name;
+
+    @SerializedName("last_name")
+    private String last_name;
+
+    @SerializedName("age")
+    private int age;
+
+    @SerializedName("username")
+    private String username;
+
+    @SerializedName("password")
+    private String password;
+
+    @SerializedName("fcm_token")
+    private String fcm_token;
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFcm_token() {
+        return fcm_token;
+    }
+
+    public void setFcm_token(String fcm_token) {
+        this.fcm_token = fcm_token;
+    }
+
     public int getDonor_id() {
         return donor_id;
     }
